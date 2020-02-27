@@ -1,0 +1,2 @@
+include ':app', ':material'
+rootProject.name='CustomTextInputLayout'
