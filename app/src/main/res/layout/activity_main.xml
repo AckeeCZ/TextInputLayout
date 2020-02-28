@@ -7,24 +7,61 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <cz.ackee.material.textfield.TextInputLayout
+        android:id="@+id/input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="@string/app_name"
+        app:boxBackgroundColor="@color/disabled"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="4dp"
+        app:boxCornerRadiusBottomStart="4dp"
+        app:boxCornerRadiusTopEnd="4dp"
+        app:boxCornerRadiusTopStart="4dp"
+        app:boxStrokeColor="@color/input_border"
+        app:boxStrokeWidth="1dp"
+        app:hintPaddingTop="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
+        tools:layout_editor_absoluteX="16dp">
+
+        <cz.ackee.material.textfield.TextInputEditText
+            android:text="hello world"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@null"
+            android:paddingStart="20dp" />
+    </cz.ackee.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/disable"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="disable"
+        app:layout_constraintBottom_toTopOf="@id/trigger_error"
+        app:layout_constraintEnd_toEndOf="@id/trigger_error"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/trigger_error"
         android:layout_width="0dp"
-        android:layout_margin="16dp"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:text="error"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/trigger_hint"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/trigger_hint"
         android:layout_width="0dp"
-        android:layout_margin="16dp"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:text="hint"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/trigger_error"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/trigger_error" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
