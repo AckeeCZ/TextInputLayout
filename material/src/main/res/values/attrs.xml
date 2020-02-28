@@ -163,6 +163,7 @@
       <!-- Outline box mode for the text input box. -->
       <enum name="outline" value="2"/>
     </attr>
+    <attr name="hintPaddingTop" format="dimension"/>
     <!-- Value to use for the EditText's collapsed top padding in box mode. -->
     <attr name="boxCollapsedPaddingTop" format="dimension"/>
     <!-- The value to use for the box's top start corner radius when in box mode. -->

@@ -75,6 +75,10 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.widget.TextViewCompat;
 import androidx.customview.view.AbsSavedState;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.util.LinkedHashSet;
+
 import cz.ackee.material.R;
 import cz.ackee.material.animation.AnimationUtils;
 import cz.ackee.material.color.MaterialColors;
@@ -86,10 +90,6 @@ import cz.ackee.material.internal.ViewUtils;
 import cz.ackee.material.resources.MaterialResources;
 import cz.ackee.material.shape.MaterialShapeDrawable;
 import cz.ackee.material.shape.ShapeAppearanceModel;
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.util.LinkedHashSet;
 
 import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 import static cz.ackee.material.internal.ThemeEnforcement.createThemedContext;
@@ -222,6 +222,8 @@ public class TextInputLayout extends LinearLayout {
   private final int boxStrokeWidthFocusedPx;
   @ColorInt private int boxStrokeColor;
   @ColorInt private int boxBackgroundColor;
+
+  private final int hintPaddingTopPx;
 
   /**
    * Values for box background mode. There is either a filled background, an outline background, or
@@ -440,6 +442,7 @@ public class TextInputLayout extends LinearLayout {
     hintEnabled = a.getBoolean(R.styleable.TextInputLayout_hintEnabled, true);
     setHint(a.getText(R.styleable.TextInputLayout_android_hint));
     hintAnimationEnabled = a.getBoolean(R.styleable.TextInputLayout_hintAnimationEnabled, true);
+    hintPaddingTopPx = a.getDimensionPixelOffset(R.styleable.TextInputLayout_hintPaddingTop, 0);
 
     shapeAppearanceModel =
         ShapeAppearanceModel.builder(context, attrs, defStyleAttr, DEF_STYLE_RES).build();
@@ -1856,7 +1859,7 @@ public class TextInputLayout extends LinearLayout {
     switch (boxBackgroundMode) {
       case BOX_BACKGROUND_OUTLINE:
         bounds.left = rect.left + editText.getPaddingLeft();
-        bounds.top = rect.top - calculateLabelMarginTop();
+        bounds.top = hintPaddingTopPx;
         bounds.right = rect.right - editText.getPaddingRight();
         return bounds;
       case BOX_BACKGROUND_FILLED:
@@ -3101,7 +3104,7 @@ public class TextInputLayout extends LinearLayout {
   }
 
   private boolean cutoutEnabled() {
-    return hintEnabled && !TextUtils.isEmpty(hint) && boxBackground instanceof CutoutDrawable;
+    return false;
   }
 
   private void openCutout() {
