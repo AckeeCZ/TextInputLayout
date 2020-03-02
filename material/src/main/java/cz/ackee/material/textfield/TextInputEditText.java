@@ -41,14 +41,17 @@ public class TextInputEditText extends AppCompatEditText {
 
   public TextInputEditText(Context context) {
     this(context, null);
+    setBackground(null);
   }
 
   public TextInputEditText(Context context, AttributeSet attrs) {
     this(context, attrs, R.attr.editTextStyle);
+    setBackground(null);
   }
 
   public TextInputEditText(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
+    setBackground(null);
   }
 
   @Override
