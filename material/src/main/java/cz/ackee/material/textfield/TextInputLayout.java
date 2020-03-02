@@ -1833,19 +1833,7 @@ public class TextInputLayout extends LinearLayout {
   }
 
   private int calculateLabelMarginTop() {
-    if (!hintEnabled) {
-      return 0;
-    }
-
-    switch (boxBackgroundMode) {
-      case BOX_BACKGROUND_OUTLINE:
-        return (int) (collapsingTextHelper.getCollapsedTextHeight() / 2);
-      case BOX_BACKGROUND_FILLED:
-      case BOX_BACKGROUND_NONE:
-        return (int) collapsingTextHelper.getCollapsedTextHeight();
-      default:
-        return 0;
-    }
+    return 0;
   }
 
   @NonNull
@@ -1886,29 +1874,21 @@ public class TextInputLayout extends LinearLayout {
     float labelHeight = collapsingTextHelper.getExpandedTextHeight();
 
     bounds.left = rect.left + editText.getCompoundPaddingLeft();
-    bounds.top = calculateExpandedLabelTop(rect, labelHeight);
+    bounds.top = calculateExpandedLabelTop(rect);
     bounds.right = rect.right - editText.getCompoundPaddingRight();
-    bounds.bottom = calculateExpandedLabelBottom(rect, bounds, labelHeight);
+    bounds.bottom = calculateExpandedLabelBottom(rect, bounds);
 
     return bounds;
   }
 
-  private int calculateExpandedLabelTop(@NonNull Rect rect, float labelHeight) {
-    if (isSingleLineFilledTextField()) {
-      return (int) (rect.centerY() - labelHeight / 2);
-    }
-    return rect.top + editText.getCompoundPaddingTop();
+  private int calculateExpandedLabelTop(@NonNull Rect rect) {
+    return (rect.top);
   }
 
   private int calculateExpandedLabelBottom(
-      @NonNull Rect rect, @NonNull Rect bounds, float labelHeight) {
-    if (boxBackgroundMode == BOX_BACKGROUND_FILLED) {
-      // Add the label's height to the top of the bounds rather than calculating from the vertical
-      // center for both the top and bottom of the label. This prevents a potential fractional loss
-      // of label height caused by the float to int conversion.
-      return (int) (bounds.top + labelHeight);
-    }
-    return rect.bottom - editText.getCompoundPaddingBottom();
+      @NonNull Rect rect, @NonNull Rect bounds) {
+    int bottom = rect.top - bounds.top;
+    return (bounds.bottom - bottom);
   }
 
   private boolean isSingleLineFilledTextField() {
