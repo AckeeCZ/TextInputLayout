@@ -747,7 +747,7 @@ public class TextInputLayout extends LinearLayout {
 
   @NonNull
   MaterialShapeDrawable getBoxBackground() {
-    if (boxBackgroundMode == BOX_BACKGROUND_FILLED || boxBackgroundMode == BOX_BACKGROUND_OUTLINE) {
+    if (boxBackgroundMode == BOX_BACKGROUND_OUTLINE) {
       return boxBackground;
     }
     throw new IllegalStateException();
@@ -756,14 +756,13 @@ public class TextInputLayout extends LinearLayout {
   /**
    * Set the box background mode (filled, outline, or none).
    *
-   * <p>May be one of {@link #BOX_BACKGROUND_NONE}, {@link #BOX_BACKGROUND_FILLED}, or {@link
-   * #BOX_BACKGROUND_OUTLINE}.
+   * <p>May be {@link #BOX_BACKGROUND_NONE} or {@link #BOX_BACKGROUND_OUTLINE}.
    *
    * <p>Note: This method defines TextInputLayout's internal behavior (for example, it allows the
    * hint to be displayed inline with the stroke in a cutout), but doesn't set all attributes that
    * are set in the styles provided for the box background modes. To achieve the look of an outlined
    * or filled text field, supplement this method with other methods that modify the box, such as
-   * {@link #setBoxStrokeColor(int)} and {@link #setBoxBackgroundColor(int)}.
+   * {@link #setBoxStrokeColor(int)}.
    *
    * @param boxBackgroundMode box's background mode
    * @throws IllegalArgumentException if boxBackgroundMode is not a @BoxBackgroundMode constant
@@ -781,8 +780,7 @@ public class TextInputLayout extends LinearLayout {
   /**
    * Get the box background mode (filled, outline, or none).
    *
-   * <p>May be one of {@link #BOX_BACKGROUND_NONE}, {@link #BOX_BACKGROUND_FILLED}, or {@link
-   * #BOX_BACKGROUND_OUTLINE}.
+   * <p>May be {@link #BOX_BACKGROUND_NONE} or {@link #BOX_BACKGROUND_OUTLINE}.
    */
   @BoxBackgroundMode
   public int getBoxBackgroundMode() {
@@ -800,10 +798,6 @@ public class TextInputLayout extends LinearLayout {
 
   private void assignBoxBackgroundByMode() {
     switch (boxBackgroundMode) {
-      case BOX_BACKGROUND_FILLED:
-        boxBackground = new MaterialShapeDrawable(shapeAppearanceModel);
-        boxUnderline = new MaterialShapeDrawable();
-        break;
       case BOX_BACKGROUND_OUTLINE:
         if (hintEnabled && !(boxBackground instanceof CutoutDrawable)) {
           boxBackground = new CutoutDrawable(shapeAppearanceModel);
@@ -864,41 +858,9 @@ public class TextInputLayout extends LinearLayout {
   }
 
   /**
-   * Set the resource used for the filled box's background color.
-   *
-   * <p>Note: The background color is only supported for filled boxes. When used with box variants
-   * other than {@link BoxBackgroundMode#BOX_BACKGROUND_FILLED}, the box background color may not
-   * work as intended.
-   *
-   * @param boxBackgroundColorId the resource to use for the box's background color
-   */
-  public void setBoxBackgroundColorResource(@ColorRes int boxBackgroundColorId) {
-    setBoxBackgroundColor(ContextCompat.getColor(getContext(), boxBackgroundColorId));
-  }
-
-  /**
-   * Set the filled box's background color.
-   *
-   * <p>Note: The background color is only supported for filled boxes. When used with box variants
-   * other than {@link BoxBackgroundMode#BOX_BACKGROUND_FILLED}, the box background color may not
-   * work as intended.
-   *
-   * @param boxBackgroundColor the color to use for the filled box's background
-   * @see #getBoxBackgroundColor()
-   */
-  public void setBoxBackgroundColor(@ColorInt int boxBackgroundColor) {
-    if (this.boxBackgroundColor != boxBackgroundColor) {
-      this.boxBackgroundColor = boxBackgroundColor;
-      defaultFilledBackgroundColor = boxBackgroundColor;
-      applyBoxAttributes();
-    }
-  }
-
-  /**
    * Returns the filled box's background color.
    *
    * @return the color used for the filled box's background
-   * @see #setBoxBackgroundColor(int)
    */
   public int getBoxBackgroundColor() {
     return boxBackgroundColor;
@@ -1126,14 +1088,12 @@ public class TextInputLayout extends LinearLayout {
   private void updateInputLayoutMargins() {
     // Create/update the LayoutParams so that we can add enough top margin
     // to the EditText to make room for the label.
-    if (boxBackgroundMode != BOX_BACKGROUND_FILLED) {
-      final LayoutParams lp = (LayoutParams) inputFrame.getLayoutParams();
-      final int newTopMargin = calculateLabelMarginTop();
+    final LayoutParams lp = (LayoutParams) inputFrame.getLayoutParams();
+    final int newTopMargin = calculateLabelMarginTop();
 
-      if (newTopMargin != lp.topMargin) {
-        lp.topMargin = newTopMargin;
-        inputFrame.requestLayout();
-      }
+    if (newTopMargin != lp.topMargin) {
+      lp.topMargin = newTopMargin;
+      inputFrame.requestLayout();
     }
   }
 
@@ -1850,11 +1810,6 @@ public class TextInputLayout extends LinearLayout {
         bounds.top = hintPaddingTopPx;
         bounds.right = rect.right - editText.getPaddingRight();
         return bounds;
-      case BOX_BACKGROUND_FILLED:
-        bounds.left = rect.left + editText.getCompoundPaddingLeft();
-        bounds.top = rect.top + boxCollapsedPaddingTopPx;
-        bounds.right = rect.right - editText.getCompoundPaddingRight();
-        return bounds;
       default:
         bounds.left = rect.left + editText.getCompoundPaddingLeft();
         bounds.top = getPaddingTop();
@@ -1889,11 +1844,6 @@ public class TextInputLayout extends LinearLayout {
       @NonNull Rect rect, @NonNull Rect bounds) {
     int bottom = rect.top - bounds.top;
     return (bounds.bottom - bottom);
-  }
-
-  private boolean isSingleLineFilledTextField() {
-    return boxBackgroundMode == BOX_BACKGROUND_FILLED
-        && (VERSION.SDK_INT < 16 || editText.getMinLines() <= 1);
   }
 
   /*
