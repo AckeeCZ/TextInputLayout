@@ -158,11 +158,11 @@ class DropdownMenuEndIconDelegate extends EndIconDelegate {
     float exposedDropdownPopupElevation =
         context
             .getResources()
-            .getDimensionPixelOffset(R.dimen.mtrl_exposed_dropdown_menu_popup_elevation);
+            .getDimensionPixelOffset(R.dimen.exposed_dropdown_menu_popup_elevation);
     int exposedDropdownPopupVerticalPadding =
         context
             .getResources()
-            .getDimensionPixelOffset(R.dimen.mtrl_exposed_dropdown_menu_popup_vertical_padding);
+            .getDimensionPixelOffset(R.dimen.exposed_dropdown_menu_popup_vertical_padding);
     // Background for the popups of the outlined variation and for the filled variation when it is
     // being displayed above the layout.
     MaterialShapeDrawable roundedCornersPopupBackground =

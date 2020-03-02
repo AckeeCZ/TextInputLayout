@@ -15,5 +15,5 @@
   ~ limitations under the License.
   -->
 <resources>
-  <dimen name="mtrl_exposed_dropdown_menu_popup_vertical_offset">1dp</dimen>
+  <dimen name="exposed_dropdown_menu_popup_vertical_offset">1dp</dimen>
 </resources>

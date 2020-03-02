@@ -450,7 +450,7 @@ public class TextInputLayout extends LinearLayout {
     boxLabelCutoutPaddingPx =
         context
             .getResources()
-            .getDimensionPixelOffset(R.dimen.mtrl_textinput_box_label_cutout_padding);
+            .getDimensionPixelOffset(R.dimen.textinput_box_label_cutout_padding);
     boxCollapsedPaddingTopPx =
         a.getDimensionPixelOffset(R.styleable.TextInputLayout_boxCollapsedPaddingTop, 0);
 
@@ -459,13 +459,13 @@ public class TextInputLayout extends LinearLayout {
             R.styleable.TextInputLayout_boxStrokeWidth,
             context
                 .getResources()
-                .getDimensionPixelSize(R.dimen.mtrl_textinput_box_stroke_width_default));
+                .getDimensionPixelSize(R.dimen.textinput_box_stroke_width_default));
     boxStrokeWidthFocusedPx =
         a.getDimensionPixelSize(
             R.styleable.TextInputLayout_boxStrokeWidthFocused,
             context
                 .getResources()
-                .getDimensionPixelSize(R.dimen.mtrl_textinput_box_stroke_width_focused));
+                .getDimensionPixelSize(R.dimen.textinput_box_stroke_width_focused));
     boxStrokeWidthPx = boxStrokeWidthDefaultPx;
 
     float boxCornerRadiusTopStart =
@@ -542,10 +542,10 @@ public class TextInputLayout extends LinearLayout {
       focusedStrokeColor =
           a.getColor(R.styleable.TextInputLayout_boxStrokeColor, Color.TRANSPARENT);
       defaultStrokeColor =
-          ContextCompat.getColor(context, R.color.mtrl_textinput_default_box_stroke_color);
-      disabledColor = ContextCompat.getColor(context, R.color.mtrl_textinput_disabled_color);
+          ContextCompat.getColor(context, R.color.textinput_default_box_stroke_color);
+      disabledColor = ContextCompat.getColor(context, R.color.textinput_disabled_color);
       hoveredStrokeColor =
-          ContextCompat.getColor(context, R.color.mtrl_textinput_hovered_box_stroke_color);
+          ContextCompat.getColor(context, R.color.textinput_hovered_box_stroke_color);
     }
 
     final int hintAppearance = a.getResourceId(R.styleable.TextInputLayout_hintTextAppearance, -1);

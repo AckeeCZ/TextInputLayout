@@ -18,20 +18,20 @@
 
   <dimen name="design_textinput_caption_translate_y">5dp</dimen>
 
-  <dimen name="mtrl_textinput_outline_box_expanded_padding">16dp</dimen>
+  <dimen name="textinput_outline_box_expanded_padding">16dp</dimen>
 
-  <dimen name="mtrl_textinput_box_corner_radius_small">0dp</dimen>
-  <dimen name="mtrl_textinput_box_corner_radius_medium">4dp</dimen>
-  <dimen name="mtrl_textinput_box_stroke_width_default">1dp</dimen>
-  <dimen name="mtrl_textinput_box_stroke_width_focused">2dp</dimen>
-  <dimen name="mtrl_textinput_box_label_cutout_padding">4dp</dimen>
+  <dimen name="textinput_box_corner_radius_small">0dp</dimen>
+  <dimen name="textinput_box_corner_radius_medium">4dp</dimen>
+  <dimen name="textinput_box_stroke_width_default">1dp</dimen>
+  <dimen name="textinput_box_stroke_width_focused">2dp</dimen>
+  <dimen name="textinput_box_label_cutout_padding">4dp</dimen>
 
   <!-- The icon views' minimum width is 48dp and since each icon is 24dp wide we need a 4dp margin
        to have the appropriate spacing before and after each icon. -->
-  <dimen name="mtrl_textinput_end_icon_margin_start">4dp</dimen>
-  <dimen name="mtrl_textinput_start_icon_margin_end">4dp</dimen>
+  <dimen name="textinput_end_icon_margin_start">4dp</dimen>
+  <dimen name="textinput_start_icon_margin_end">4dp</dimen>
 
-  <dimen name="mtrl_exposed_dropdown_menu_popup_elevation">8dp</dimen>
-  <dimen name="mtrl_exposed_dropdown_menu_popup_vertical_padding">8dp</dimen>
-  <dimen name="mtrl_exposed_dropdown_menu_popup_vertical_offset">-8dp</dimen>
+  <dimen name="exposed_dropdown_menu_popup_elevation">8dp</dimen>
+  <dimen name="exposed_dropdown_menu_popup_vertical_padding">8dp</dimen>
+  <dimen name="exposed_dropdown_menu_popup_vertical_offset">-8dp</dimen>
 </resources>
