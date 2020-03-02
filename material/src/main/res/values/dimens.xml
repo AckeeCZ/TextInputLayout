@@ -16,7 +16,12 @@
   -->
 <resources>
 
+  <dimen name="shape_corner_size_small_component">4dp</dimen>
+  <dimen name="shape_corner_size_medium_component">4dp</dimen>
+  <dimen name="shape_corner_size_large_component">0dp</dimen>
+
   <dimen name="design_textinput_caption_translate_y">5dp</dimen>
+  <dimen name="min_touch_target_size">48dp</dimen>
 
   <dimen name="textinput_outline_box_expanded_padding">16dp</dimen>
 

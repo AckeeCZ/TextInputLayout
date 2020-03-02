@@ -154,7 +154,7 @@ class DropdownMenuEndIconDelegate extends EndIconDelegate {
     float popupCornerRadius =
         context
             .getResources()
-            .getDimensionPixelOffset(R.dimen.mtrl_shape_corner_size_small_component);
+            .getDimensionPixelOffset(R.dimen.shape_corner_size_small_component);
     float exposedDropdownPopupElevation =
         context
             .getResources()

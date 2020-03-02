@@ -174,7 +174,7 @@ import static cz.ackee.material.textfield.IndicatorViewController.COUNTER_INDEX;
  */
 public class TextInputLayout extends LinearLayout {
 
-  private static final int DEF_STYLE_RES = R.style.Widget_Design_TextInputLayout;
+  private static final int DEF_STYLE_RES = 0;
 
   /** Duration for the label's scale up and down animations. */
   private static final int LABEL_SCALE_ANIMATION_DURATION = 167;

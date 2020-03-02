@@ -16,6 +16,77 @@
   -->
 <resources>
 
+  <attr name="elevationOverlayEnabled" format="boolean" />
+  <attr name="isMaterialTheme" format="boolean" />
+  <attr name="elevationOverlayColor" format="reference" />
+  <attr name="colorSurface" format="reference" />
+  <attr name="colorPrimaryVariant" format="reference" />
+  <attr name="minTouchTargetSize" format="dimension" />
+
+  <attr name="materialThemeOverlay" format="reference"/>
+
+  <attr name="textAppearanceSubtitle1" format="reference"/>
+  <attr name="textAppearanceCaption" format="reference"/>
+
+  <declare-styleable name="ThemeEnforcement">
+    <attr name="enforceMaterialTheme" format="boolean"/>
+    <attr name="enforceTextAppearance" format="boolean"/>
+    <attr name="android:textAppearance"/>
+  </declare-styleable>
+
+
+  <declare-styleable name="MaterialShape">
+    <!-- Shape appearance style reference to be used to construct a ShapeAppearanceModel. -->
+    <attr name="shapeAppearance" format="reference"/>
+    <!-- Shape appearance overlay style reference to be used to modify the shapeAppearance. -->
+    <attr name="shapeAppearanceOverlay" format="reference"/>
+  </declare-styleable>
+
+  <declare-styleable name="ShapeAppearance">
+    <!-- Corner size to be used in the ShapeAppearance. All corners default to this value -->
+    <attr name="cornerSize" format="dimension|fraction"/>
+    <!-- Top left corner size to be used in the ShapeAppearance. -->
+    <attr name="cornerSizeTopLeft" format="dimension|fraction"/>
+    <!-- Top right corner size to be used in the ShapeAppearance. -->
+    <attr name="cornerSizeTopRight" format="dimension|fraction"/>
+    <!-- Bottom right corner size to be used in the ShapeAppearance. -->
+    <attr name="cornerSizeBottomRight" format="dimension|fraction"/>
+    <!-- Bottom left corner size to be used in the ShapeAppearance. -->
+    <attr name="cornerSizeBottomLeft" format="dimension|fraction"/>
+
+    <!-- Corner family to be used in the ShapeAppearance. All corners default to this value -->
+    <attr name="cornerFamily" format="enum">
+      <enum name="rounded" value="0"/>
+      <enum name="cut" value="1"/>
+    </attr>
+    <!-- Top left corner family to be used in the ShapeAppearance. -->
+    <attr name="cornerFamilyTopLeft" format="enum">
+      <enum name="rounded" value="0"/>
+      <enum name="cut" value="1"/>
+    </attr>
+    <!-- Top right corner family to be used in the ShapeAppearance. -->
+    <attr name="cornerFamilyTopRight" format="enum">
+      <enum name="rounded" value="0"/>
+      <enum name="cut" value="1"/>
+    </attr>
+    <!-- Bottom right corner family to be used in the ShapeAppearance. -->
+    <attr name="cornerFamilyBottomRight" format="enum">
+      <enum name="rounded" value="0"/>
+      <enum name="cut" value="1"/>
+    </attr>
+    <!-- Bottom left corner family to be used in the ShapeAppearance. -->
+    <attr name="cornerFamilyBottomLeft" format="enum">
+      <enum name="rounded" value="0"/>
+      <enum name="cut" value="1"/>
+    </attr>
+  </declare-styleable>
+
+  <attr name="shapeAppearanceSmallComponent" format="reference"/>
+
+
+  <attr name="colorOnError" format="reference|color" />
+  <attr name="colorOnSurface" format="reference|color" />
+
   <!-- Style to use for TextInputLayout in the theme. -->
   <attr name="textInputStyle" format="reference"/>
 

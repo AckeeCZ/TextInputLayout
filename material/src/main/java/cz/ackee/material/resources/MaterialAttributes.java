@@ -112,7 +112,7 @@ public class MaterialAttributes {
   /** Returns the minimum touch target size, acceptable for accessibility, in pixels. */
   @Px
   public static int resolveMinimumAccessibleTouchTarget(@NonNull Context context) {
-    return resolveDimension(context, R.attr.minTouchTargetSize, R.dimen.mtrl_min_touch_target_size);
+    return resolveDimension(context, R.attr.minTouchTargetSize, R.dimen.min_touch_target_size);
   }
 
   /**
