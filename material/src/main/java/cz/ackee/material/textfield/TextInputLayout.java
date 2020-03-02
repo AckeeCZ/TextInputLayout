@@ -1904,10 +1904,6 @@ public class TextInputLayout extends LinearLayout {
    */
   private int calculateBoxBackgroundColor() {
     int backgroundColor = boxBackgroundColor;
-    if (boxBackgroundMode == BOX_BACKGROUND_FILLED) {
-      int surfaceLayerColor = MaterialColors.getColor(this, R.attr.colorSurface, Color.TRANSPARENT);
-      backgroundColor = MaterialColors.layer(surfaceLayerColor, boxBackgroundColor);
-    }
     return backgroundColor;
   }
 
@@ -3189,14 +3185,12 @@ public class TextInputLayout extends LinearLayout {
     }
 
     // Update the text box's background color based on the current state.
-    if (boxBackgroundMode == BOX_BACKGROUND_FILLED) {
-      if (!isEnabled()) {
-        boxBackgroundColor = disabledFilledBackgroundColor;
-      } else if (isHovered) {
-        boxBackgroundColor = hoveredFilledBackgroundColor;
-      } else {
-        boxBackgroundColor = defaultFilledBackgroundColor;
-      }
+    if (!isEnabled()) {
+      boxBackgroundColor = disabledFilledBackgroundColor;
+    } else if (isHovered) {
+      boxBackgroundColor = hoveredFilledBackgroundColor;
+    } else {
+      boxBackgroundColor = defaultFilledBackgroundColor;
     }
 
     applyBoxAttributes();
