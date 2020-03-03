@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue">#2222FF</color>
+    <color name="background">#DDDDDD</color>
+    <color name="colorOnBackground">#FFFFFF</color>
+    <color name="boxStrokeColor">@color/blue</color>
+</resources>

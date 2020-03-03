@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <cz.ackee.ui.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Username"
+        app:boxBackgroundColor="@color/colorOnBackground"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxStrokeColor="@color/input_stroke"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="1dp"
+        app:hintEnabled="true"
+        app:hintPaddingTop="12dp"
+        app:hintTextAppearance="@style/TextAppearance.Design.Hint">
+
+        <cz.ackee.ui.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:paddingStart="16dp"
+            android:paddingTop="28dp"
+            android:paddingBottom="16dp"
+            android:singleLine="true" />
+    </cz.ackee.ui.textfield.TextInputLayout>
+
+    <cz.ackee.ui.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Password"
+        app:boxBackgroundColor="@color/colorOnBackground"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxStrokeColor="@color/input_stroke"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="1dp"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/background"
+        app:hintEnabled="true"
+        app:hintPaddingTop="12dp"
+        app:hintTextAppearance="@style/TextAppearance.Design.Hint">
+
+        <cz.ackee.ui.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:paddingStart="24dp"
+            android:paddingTop="28dp"
+            android:paddingBottom="16dp"
+            android:singleLine="true" />
+    </cz.ackee.ui.textfield.TextInputLayout>
+
+</LinearLayout>
