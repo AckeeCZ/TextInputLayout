@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Design.TextInputLayout" parent="android:Widget">
+        <item name="hintTextAppearance">@style/TextAppearance.Design.Hint</item>
+    </style>
+    <style name="TextAppearance.Design.Hint" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">?attr/colorControlActivated</item>
+    </style>
+</resources>
