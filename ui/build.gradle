@@ -32,8 +32,8 @@ dependencies {
 }
 
 ext {
-    bintrayName = 'text-input-layout'
-    publishedArtifactId = 'text-input-layout'
+    bintrayName = 'TextInputLayout'
+    publishedArtifactId = 'TextInputLayout'
 
     libraryName = 'TextInputLayout'
     libraryDescription = 'Google Material Component without the hint cut out.'
