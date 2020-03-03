@@ -30,3 +30,14 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.2.0'
 }
+
+ext {
+    bintrayName = 'text-input-layout'
+    publishedArtifactId = 'text-input-layout'
+
+    libraryName = 'TextInputLayout'
+    libraryDescription = 'Google Material Component without the hint cut out.'
+}
+
+apply from: rootProject.file('gradle/bintray/install.gradle')
+apply from: rootProject.file('gradle/bintray/bintray.gradle')

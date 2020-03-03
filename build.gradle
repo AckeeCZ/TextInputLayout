@@ -26,3 +26,9 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+/**
+ * Define properties with library info
+ */
+ext.libProperties = new Properties()
+ext.libProperties.load(file("${rootDir}/lib.properties").newReader())
