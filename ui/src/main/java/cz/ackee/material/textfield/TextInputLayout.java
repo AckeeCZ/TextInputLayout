@@ -522,8 +522,8 @@ public class TextInputLayout extends LinearLayout {
     }
 
     if (a.hasValue(R.styleable.TextInputLayout_android_textColorHint)) {
-      defaultHintTextColor =
-          focusedTextColor = a.getColorStateList(R.styleable.TextInputLayout_android_textColorHint);
+      defaultHintTextColor = a.getColorStateList(R.styleable.TextInputLayout_android_textColorHint);
+      focusedTextColor = a.getColorStateList(R.styleable.TextInputLayout_hintTextColor);
     }
 
     ColorStateList boxStrokeColorStateList =
