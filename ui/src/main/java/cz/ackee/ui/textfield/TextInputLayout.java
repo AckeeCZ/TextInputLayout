@@ -221,7 +221,7 @@ public class TextInputLayout extends LinearLayout {
   @ColorInt private int boxStrokeColor;
   @ColorInt private int boxBackgroundColor;
 
-  private final int hintPaddingTopPx;
+  private int hintPaddingTopPx;
 
   /**
    * Values for box background mode. There is either a filled background, an outline background, or
@@ -369,7 +369,7 @@ public class TextInputLayout extends LinearLayout {
   private ColorStateList defaultHintTextColor;
   private ColorStateList focusedTextColor;
 
-  @ColorInt private final int defaultStrokeColor;
+  @ColorInt private int defaultStrokeColor;
   @ColorInt private final int hoveredStrokeColor;
   @ColorInt private int focusedStrokeColor;
 
@@ -839,8 +839,8 @@ public class TextInputLayout extends LinearLayout {
    * @see #getBoxStrokeColor()
    */
   public void setBoxStrokeColor(@ColorInt int boxStrokeColor) {
-    if (focusedStrokeColor != boxStrokeColor) {
-      focusedStrokeColor = boxStrokeColor;
+    if (defaultStrokeColor != boxStrokeColor) {
+      defaultStrokeColor = boxStrokeColor;
       updateTextInputBoxState();
     }
   }
@@ -852,6 +852,30 @@ public class TextInputLayout extends LinearLayout {
    * @see #setBoxStrokeColor(int)
    */
   public int getBoxStrokeColor() {
+    return defaultStrokeColor;
+  }
+
+  /**
+   * Set the outline box's stroke color when focused.
+   *
+   * <p>Calling this method when not in outline box mode will do nothing.
+   *
+   * @param boxFocusedStrokeColor the color to use for the box's stroke when focused
+   */
+  public void setBoxFocusedStrokeColor(@ColorInt int boxFocusedStrokeColor) {
+    if (focusedStrokeColor != boxFocusedStrokeColor) {
+      focusedStrokeColor = boxFocusedStrokeColor;
+      updateTextInputBoxState();
+    }
+  }
+
+  /**
+   * Returns the box's stroke color when focused.
+   *
+   * @return the color used for the box's stroke when focused
+   * @see #setBoxFocusedStrokeColor(int)
+   */
+  public int getBoxFocusedStrokeColor() {
     return focusedStrokeColor;
   }
 
@@ -861,7 +885,29 @@ public class TextInputLayout extends LinearLayout {
    * @return the color used for the filled box's background
    */
   public int getBoxBackgroundColor() {
-    return boxBackgroundColor;
+    return defaultFilledBackgroundColor;
+  }
+
+  /**
+   * Set the outline box's background color.
+   *
+   * @param color the color to use for the box's background
+   */
+  public void setBoxBackgroundColor(@ColorInt int color) {
+    defaultFilledBackgroundColor = color;
+    updateTextInputBoxState();
+  }
+
+  /**
+   * Set the outline box's stroke width.
+   *
+   * <p>Calling this method when not in outline box mode will do nothing.
+   *
+   * @param width the width to use for the box's stroke
+   */
+  public void setBoxStrokeWidthPx(int width) {
+    boxStrokeWidthPx = width;
+    updateTextInputBoxState();
   }
 
   /**
@@ -982,6 +1028,15 @@ public class TextInputLayout extends LinearLayout {
   @Nullable
   public Typeface getTypeface() {
     return typeface;
+  }
+
+  public int getHintPaddingTop() {
+    return hintPaddingTopPx;
+  }
+
+  public void setHintPaddingTop(int paddingPx) {
+    hintPaddingTopPx = paddingPx;
+    updateTextInputBoxState();
   }
 
   @Override
@@ -1896,6 +1951,7 @@ public class TextInputLayout extends LinearLayout {
     return boxStrokeWidthPx > -1 && boxStrokeColor != Color.TRANSPARENT;
   }
 
+  @SuppressLint("RestrictedApi")
   void updateEditTextBackground() {
     // Only update the color filter for the legacy text field, since we can directly change the
     // Paint colors of the MaterialShapeDrawable box background without having to use color filters.
