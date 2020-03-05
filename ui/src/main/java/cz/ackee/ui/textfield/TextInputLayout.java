@@ -865,6 +865,18 @@ public class TextInputLayout extends LinearLayout {
   }
 
   /**
+   * Set the outline box's stroke width.
+   *
+   * <p>Calling this method when not in outline box mode will do nothing.
+   *
+   * @param width the width to use for the box's stroke
+   */
+  public void setBoxStrokeWidthPx(int width) {
+    boxStrokeWidthPx = width;
+    updateTextInputBoxState();
+  }
+
+  /**
    * Set the resources used for the box's corner radii.
    *
    * @param boxCornerRadiusTopStartId the resource to use for the box's top start corner radius
