@@ -369,7 +369,7 @@ public class TextInputLayout extends LinearLayout {
   private ColorStateList defaultHintTextColor;
   private ColorStateList focusedTextColor;
 
-  @ColorInt private final int defaultStrokeColor;
+  @ColorInt private int defaultStrokeColor;
   @ColorInt private final int hoveredStrokeColor;
   @ColorInt private int focusedStrokeColor;
 
@@ -839,8 +839,8 @@ public class TextInputLayout extends LinearLayout {
    * @see #getBoxStrokeColor()
    */
   public void setBoxStrokeColor(@ColorInt int boxStrokeColor) {
-    if (focusedStrokeColor != boxStrokeColor) {
-      focusedStrokeColor = boxStrokeColor;
+    if (defaultStrokeColor != boxStrokeColor) {
+      defaultStrokeColor = boxStrokeColor;
       updateTextInputBoxState();
     }
   }
@@ -852,7 +852,7 @@ public class TextInputLayout extends LinearLayout {
    * @see #setBoxStrokeColor(int)
    */
   public int getBoxStrokeColor() {
-    return focusedStrokeColor;
+    return defaultStrokeColor;
   }
 
   /**
