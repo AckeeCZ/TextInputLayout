@@ -221,7 +221,7 @@ public class TextInputLayout extends LinearLayout {
   @ColorInt private int boxStrokeColor;
   @ColorInt private int boxBackgroundColor;
 
-  private final int hintPaddingTopPx;
+  private int hintPaddingTopPx;
 
   /**
    * Values for box background mode. There is either a filled background, an outline background, or
@@ -982,6 +982,15 @@ public class TextInputLayout extends LinearLayout {
   @Nullable
   public Typeface getTypeface() {
     return typeface;
+  }
+
+  public int getHintPaddingTop() {
+    return hintPaddingTopPx;
+  }
+
+  public void setHintPaddingTop(int paddingPx) {
+    hintPaddingTopPx = paddingPx;
+    updateTextInputBoxState();
   }
 
   @Override
