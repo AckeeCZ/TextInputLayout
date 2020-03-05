@@ -861,7 +861,17 @@ public class TextInputLayout extends LinearLayout {
    * @return the color used for the filled box's background
    */
   public int getBoxBackgroundColor() {
-    return boxBackgroundColor;
+    return defaultFilledBackgroundColor;
+  }
+
+  /**
+   * Set the outline box's background color.
+   *
+   * @param color the color to use for the box's background
+   */
+  public void setBoxBackgroundColor(@ColorInt int color) {
+    defaultFilledBackgroundColor = color;
+    updateTextInputBoxState();
   }
 
   /**
