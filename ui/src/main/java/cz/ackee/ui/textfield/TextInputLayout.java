@@ -856,6 +856,30 @@ public class TextInputLayout extends LinearLayout {
   }
 
   /**
+   * Set the outline box's stroke color when focused.
+   *
+   * <p>Calling this method when not in outline box mode will do nothing.
+   *
+   * @param boxFocusedStrokeColor the color to use for the box's stroke when focused
+   */
+  public void setBoxFocusedStrokeColor(@ColorInt int boxFocusedStrokeColor) {
+    if (focusedStrokeColor != boxFocusedStrokeColor) {
+      focusedStrokeColor = boxFocusedStrokeColor;
+      updateTextInputBoxState();
+    }
+  }
+
+  /**
+   * Returns the box's stroke color when focused.
+   *
+   * @return the color used for the box's stroke when focused
+   * @see #setBoxFocusedStrokeColor(int)
+   */
+  public int getBoxFocusedStrokeColor() {
+    return focusedStrokeColor;
+  }
+
+  /**
    * Returns the filled box's background color.
    *
    * @return the color used for the filled box's background
