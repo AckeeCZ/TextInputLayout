@@ -1951,6 +1951,7 @@ public class TextInputLayout extends LinearLayout {
     return boxStrokeWidthPx > -1 && boxStrokeColor != Color.TRANSPARENT;
   }
 
+  @SuppressLint("RestrictedApi")
   void updateEditTextBackground() {
     // Only update the color filter for the legacy text field, since we can directly change the
     // Paint colors of the MaterialShapeDrawable box background without having to use color filters.
