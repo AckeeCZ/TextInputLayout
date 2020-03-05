@@ -1,12 +1,12 @@
-name: Java CI
+name: Continuous Deployment
 
 on:
-  create:
+  push:
     tags:
       - v*
 
 jobs:
-  build:
+  publish:
 
     runs-on: ubuntu-latest
 
