@@ -9,6 +9,10 @@ hint and error, but does not cut out the border.
 **Please note** that only `TextInputLayout` and `TextInputEditText` are
 supported.
 
+## Preview
+
+![sample](./assets/sample.png)
+
 ### Example usage
 
 ```XML
@@ -43,3 +47,6 @@ supported.
         android:singleLine="true" />
 </cz.ackee.ui.textfield.TextInputLayout>
 ```
+
+### Download
+Include it in your project with  `implementation cz.ackee.ui:TextInputLayout:1.1.0`
