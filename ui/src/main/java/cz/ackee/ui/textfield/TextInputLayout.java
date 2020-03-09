@@ -181,6 +181,8 @@ public class TextInputLayout extends LinearLayout {
 
   private static final String LOG_TAG = "TextInputLayout";
 
+  private static final int DEFAULT_HINT_SIZE_COLLAPSED = 15;
+
   @NonNull private final FrameLayout inputFrame;
   @NonNull private final FrameLayout endIconFrame;
   EditText editText;
@@ -441,6 +443,8 @@ public class TextInputLayout extends LinearLayout {
     setHint(a.getText(R.styleable.TextInputLayout_android_hint));
     hintAnimationEnabled = a.getBoolean(R.styleable.TextInputLayout_hintAnimationEnabled, true);
     hintPaddingTopPx = a.getDimensionPixelOffset(R.styleable.TextInputLayout_hintPaddingTop, 0);
+    float collapsedHintTextSize = a.getDimensionPixelOffset(R.styleable.TextInputLayout_collapsedHintTextSize, DEFAULT_HINT_SIZE_COLLAPSED);
+    collapsingTextHelper.setCollapsedTextSize(collapsedHintTextSize);
 
     shapeAppearanceModel =
         ShapeAppearanceModel.builder(context, attrs, defStyleAttr, DEF_STYLE_RES).build();
@@ -1318,6 +1322,21 @@ public class TextInputLayout extends LinearLayout {
       updateInputLayoutMargins();
     }
   }
+
+  /**
+   * Set the size of the hint text when collapsed.
+   */
+  public void setCollapsedHintTextSize(float textSize) {
+    collapsingTextHelper.setCollapsedTextSize(textSize);
+  }
+
+  /**
+   * Get the size of the hint text when collapsed.
+   */
+  public float getCollapsedHintTextSize() {
+    return collapsingTextHelper.getCollapsedTextSize();
+  }
+
   /**
    * Sets the collapsed hint text color from the specified ColorStateList resource.
    *

@@ -56,6 +56,7 @@
   <public name="hintAnimationEnabled" type="attr"/>
   <public name="hintEnabled" type="attr"/>
   <public name="hintTextAppearance" type="attr"/>
+  <public name="collapsedHintTextSize" type="attr"/>
   <public name="hintTextColor" type="attr"/>
   <public name="startIconDrawable" type="attr"/>
   <public name="startIconContentDescription" type="attr"/>
