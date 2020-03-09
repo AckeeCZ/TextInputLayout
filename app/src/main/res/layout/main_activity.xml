@@ -23,8 +23,7 @@
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="1dp"
         app:hintEnabled="true"
-        app:hintPaddingTop="12dp"
-        app:hintTextAppearance="@style/TextAppearance.Design.Hint">
+        app:hintPaddingTop="12dp">
 
         <cz.ackee.ui.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -54,14 +53,13 @@
         app:endIconMode="password_toggle"
         app:endIconTint="@color/background"
         app:hintEnabled="true"
-        app:hintPaddingTop="12dp"
-        app:hintTextAppearance="@style/TextAppearance.Design.Hint">
+        app:hintPaddingTop="12dp">
 
         <cz.ackee.ui.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:paddingStart="24dp"
+            android:paddingStart="16dp"
             android:paddingTop="28dp"
             android:paddingBottom="16dp"
             android:singleLine="true" />

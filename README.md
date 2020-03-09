@@ -34,9 +34,8 @@ supported.
     app:boxStrokeWidth="0dp"
     app:boxStrokeWidthFocused="1dp"
     app:hintEnabled="true"
-    app:hintPaddingTop="12dp"
-    app:hintTextAppearance="@style/TextAppearance.Design.Hint">
-
+    app:hintPaddingTop="12dp">
+    
     <cz.ackee.ui.textfield.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
