@@ -27,5 +27,5 @@ jobs:
       - name: Upload
         run: ./gradlew ui:bintrayUpload
         env:
-          bintrayUsername: ${{ secrets.bintrayUsername }}
-          bintrayApiKey: ${{ secrets.bintrayApiKey }}
+          bintrayUsername: ${{ secrets.BINTRAY_NAME }}
+          bintrayApiKey: ${{ secrets.BINTRAY_API_KEY }}
