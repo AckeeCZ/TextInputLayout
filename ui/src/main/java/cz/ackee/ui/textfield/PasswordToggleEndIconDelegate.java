@@ -17,6 +17,7 @@
 package cz.ackee.ui.textfield;
 
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -105,11 +106,24 @@ class PasswordToggleEndIconDelegate extends EndIconDelegate {
         });
     textInputLayout.addOnEditTextAttachedListener(onEditTextAttachedListener);
     textInputLayout.addOnEndIconChangedListener(onEndIconChangedListener);
+    EditText editText = textInputLayout.getEditText();
+    if (isInputTypePassword(editText)) {
+      // By default set the input to be disguised.
+      editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+    }
   }
 
   private boolean hasPasswordTransformation() {
     EditText editText = textInputLayout.getEditText();
     return editText != null
         && editText.getTransformationMethod() instanceof PasswordTransformationMethod;
+  }
+
+  private static boolean isInputTypePassword(EditText editText) {
+    return editText != null
+            && (editText.getInputType() == InputType.TYPE_NUMBER_VARIATION_PASSWORD
+            || editText.getInputType() == InputType.TYPE_TEXT_VARIATION_PASSWORD
+            || editText.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            || editText.getInputType() == InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD);
   }
 }
