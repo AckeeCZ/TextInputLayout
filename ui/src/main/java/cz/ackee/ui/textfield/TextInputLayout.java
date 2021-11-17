@@ -558,7 +558,7 @@ public class TextInputLayout extends LinearLayout {
     errorIconView =
         (CheckableImageButton)
             LayoutInflater.from(getContext())
-                .inflate(R.layout.design_text_input_end_icon, inputFrame, false);
+                .inflate(R.layout.lib_design_text_input_end_icon, inputFrame, false);
     inputFrame.addView(errorIconView);
     errorIconView.setVisibility(GONE);
     if (a.hasValue(R.styleable.TextInputLayout_errorIconDrawable)) {
@@ -598,7 +598,7 @@ public class TextInputLayout extends LinearLayout {
     startIconView =
         (CheckableImageButton)
             LayoutInflater.from(getContext())
-                .inflate(R.layout.design_text_input_start_icon, inputFrame, false);
+                .inflate(R.layout.lib_design_text_input_start_icon, inputFrame, false);
     inputFrame.addView(startIconView);
     startIconView.setVisibility(GONE);
     setStartIconOnClickListener(null);
@@ -658,7 +658,7 @@ public class TextInputLayout extends LinearLayout {
     endIconView =
         (CheckableImageButton)
             LayoutInflater.from(getContext())
-                .inflate(R.layout.design_text_input_end_icon, endIconFrame, false);
+                .inflate(R.layout.lib_design_text_input_end_icon, endIconFrame, false);
     endIconFrame.addView(endIconView);
     endIconView.setVisibility(GONE);
     endIconDelegates.append(END_ICON_CUSTOM, new CustomEndIconDelegate(this));
