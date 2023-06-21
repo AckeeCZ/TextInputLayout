@@ -22,8 +22,6 @@ jobs:
         run: ./gradlew ui:clean
       - name: Assemble
         run: ./gradlew ui:assemble
-      - name: Install
-        run: ./gradlew ui:install
       # Base64 decodes and pipes the GPG key content into the secret file
       - name: Prepare environment
         env:
