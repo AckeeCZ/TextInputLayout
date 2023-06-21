@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <cz.ackee.ui.textfield.TextInputLayout
+    <io.github.ackeecz.ui.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -26,7 +26,7 @@
         app:hintPaddingTop="12dp"
         app:hintTextAppearance="@style/TextAppearance.Design.Hint">
 
-        <cz.ackee.ui.textfield.TextInputEditText
+        <io.github.ackeecz.ui.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -34,9 +34,9 @@
             android:paddingTop="28dp"
             android:paddingBottom="16dp"
             android:singleLine="true" />
-    </cz.ackee.ui.textfield.TextInputLayout>
+    </io.github.ackeecz.ui.textfield.TextInputLayout>
 
-    <cz.ackee.ui.textfield.TextInputLayout
+    <io.github.ackeecz.ui.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -57,7 +57,7 @@
         app:hintPaddingTop="12dp"
         app:hintTextAppearance="@style/TextAppearance.Design.Hint">
 
-        <cz.ackee.ui.textfield.TextInputEditText
+        <io.github.ackeecz.ui.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -65,6 +65,6 @@
             android:paddingTop="28dp"
             android:paddingBottom="16dp"
             android:singleLine="true" />
-    </cz.ackee.ui.textfield.TextInputLayout>
+    </io.github.ackeecz.ui.textfield.TextInputLayout>
 
 </LinearLayout>
