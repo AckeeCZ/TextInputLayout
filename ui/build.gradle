@@ -33,7 +33,7 @@ dependencies {
 
 ext {
     PUBLISH_ARTIFACT_ID = 'TextInputLayout'
-    POM_DESCRIPTION = 'TextInputLayout'
+    POM_DESCRIPTION = 'Google Material Component without the hint cut out.'
 }
 
 apply from: "${rootProject.projectDir}/gradle/mavencentral/publish.gradle"
