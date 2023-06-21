@@ -229,6 +229,8 @@
     <attr name="boxBackgroundMode">
       <!-- Specifies that there should be no box set on the text input area. -->
       <enum name="none" value="0"/>
+      <!-- Filled box mode for the text input box. -->
+      <enum name="filled" value="1"/>
       <!-- Outline box mode for the text input box. -->
       <enum name="outline" value="2"/>
     </attr>

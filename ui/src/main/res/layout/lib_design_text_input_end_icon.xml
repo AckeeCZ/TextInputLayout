@@ -15,7 +15,7 @@
   ~ limitations under the License.
 -->
 
-<cz.ackee.ui.internal.CheckableImageButton
+<io.github.ackeecz.ui.internal.CheckableImageButton
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/text_input_end_icon"

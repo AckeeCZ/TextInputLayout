@@ -1,5 +1,7 @@
 # TextInputLayout
 
+[ ![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.ackeecz/ui/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.ackeecz/ui)
+
 **TextInputLayout** is a library that provides a modified `TextInputLayout`
 from Google's [Material Components for Android](
 https://github.com/material-components/material-components-android).
@@ -16,7 +18,7 @@ supported.
 ### Example usage
 
 ```XML
-<cz.ackee.ui.textfield.TextInputLayout
+<io.github.ackeecz.ui.textfield.TextInputLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
@@ -37,7 +39,7 @@ supported.
     app:hintPaddingTop="12dp"
     app:hintTextAppearance="@style/TextAppearance.Design.Hint">
 
-    <cz.ackee.ui.textfield.TextInputEditText
+    <io.github.ackeecz.ui.textfield.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@null"
@@ -45,8 +47,8 @@ supported.
         android:paddingTop="28dp"
         android:paddingBottom="16dp"
         android:singleLine="true" />
-</cz.ackee.ui.textfield.TextInputLayout>
+</io.github.ackeecz.ui.textfield.TextInputLayout>
 ```
 
 ### Download
-Include it in your project with  `implementation cz.ackee.ui:TextInputLayout:1.1.0`
+Include it in your project with  `implementation io.github.ackeecz.ui:TextInputLayout:1.1.0`
