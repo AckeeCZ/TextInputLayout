@@ -1,6 +1,6 @@
 # TextInputLayout
 
-[ ![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.ackeecz/ui/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.ackeecz/ui)
+[ ![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.ackeecz/TextInputLayout/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.ackeecz/TextInputLayout)
 
 **TextInputLayout** is a library that provides a modified `TextInputLayout`
 from Google's [Material Components for Android](
@@ -51,4 +51,4 @@ supported.
 ```
 
 ### Download
-Include it in your project with  `implementation io.github.ackeecz.ui:TextInputLayout:1.1.0`
+Include it in your project with  `implementation io.github.ackeecz:TextInputLayout:1.1.0`
