@@ -31,7 +31,7 @@ jobs:
           git fetch --unshallow
           sudo bash -c "echo '$GPG_KEY' | base64 -d > '$SIGNING_SECRET_KEY_RING_FILE'"
       - name: Publish to Maven Central
-        run: ./gradlew :build-gradle-plugin:publishReleasePublicationToSonatypeRepository --max-workers 1 :build-gradle-plugin:closeAndReleaseRepository
+        run: ./gradlew publishReleasePublicationToSonatypeRepository --max-workers 1 closeAndReleaseRepository
         env:
           OSSRH_USERNAME: ${{ secrets.ANDROID_OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.ANDROID_OSSRH_PASSWORD }}
